@@ -1,11 +1,4 @@
-// Full Name        : Desvita
-// Full Time
-// Student Number   : 6738163
-// Tutorial Group   : CSIT 111 - T01 (1115)
-// Objective        : Lab 2 java program
-// Declaration      : This is my own work
 
-// Java program reads datas using Scanner class
 import java.util.Scanner;
 import java.util.Formatter;
 
