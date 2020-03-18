@@ -1,0 +1,83 @@
+// Full Name        : Desvita
+// Full Time
+// Student Number   : 6738163
+// Tutorial Group   : CSIT 111 - T01 (1115)
+// Objective        : Lab 2 java program
+// Declaration      : This is my own work
+
+// Java program reads datas using Scanner class
+import java.util.Scanner;
+import java.util.Formatter;
+
+public class Desvita_Lab_2 {
+
+    public static void main(String[] args) {
+        
+        // Integer encryption
+        // Print out the words "Enter 4 digits integer to be encrypted:" to the screen
+        System.out.println("Enter 4 digits integer to be encrypted:");      
+        
+        // Declare a new object of the scanner class
+        // Read user's input and store it as variable (encryptionScanner)
+        Scanner encryptionScanner = new Scanner(System.in);                 
+        
+        // Store user's input as a variable (firstInput) with data type String
+        String firstInput = encryptionScanner.nextLine();                   
+
+        // Declare empty string to store the result (tempResult)
+        String tempResult = "";      
+        
+        // Store the remainder from the substraction of 4 and the length of the input as a new variable(format)
+        // If the remainder is not zero, prepend zero to the (firstInput) with a for loop as much as the remainder
+        String format = String.format("%04d", Integer.valueOf(firstInput)); 
+        
+        
+        // Declare a for loop with a limitation under 4
+        //   Get a char by its index
+        //   Convert the char to int 
+        //   Store the int to variable (num)
+        //   Add 7 to (num)
+        //   Mod (num) by 10
+        for (int x = 0; x < 4; x++) {
+            int num = (Character.getNumericValue(format.charAt(x)) + 7) % 10;
+            
+        //  Append (num) to the string(tempResult)
+            tempResult += num;
+        }
+        // Print out the swapped result 
+        System.out.println("Encrypted integer is " + tempResult.charAt(2) + tempResult.charAt(3) + tempResult.charAt(0) + tempResult.charAt(1));
+
+        // Integer decryption
+        // Print out the words "Enter 4 digits integer to be decrypted:" to the screen
+        System.out.println("Enter 4 digits integer to be decrypted:");
+        
+        // Declare a new object of the scanner class
+        // Read user's input and store it as variable (decryptionScanner)
+        Scanner decryptionScanner = new Scanner(System.in);
+
+         // Store user's input as a variable (secondInput) with data type String
+        String secondInput = decryptionScanner.nextLine();
+
+        // Declare empty string to store the result (tempResult2)
+        String tempResult2 = "";
+        
+        // Store the remainder from the substraction of 4 and the length of the input as a new variable(format2)
+        // If the remainder is not zero, prepend zero to the (firstInput) with a for loop as much as the remainder
+        String format2 = String.format("%04d", Integer.valueOf(secondInput));
+        
+        // Declare a for loop with a limitation under 4
+        //   Get a char by its index
+        //   Convert the char to int 
+        //   Store the int to variable (num)
+        //   Add 3 to (num)
+        //   Mod (num) by 10
+        for (int x = 0; x < 4; x++) {
+            int num = (Character.getNumericValue(format2.charAt(x)) + 3) % 10;
+            
+        //  Append (num) to the string(tempResult)
+            tempResult2 += num;
+        }
+        // Print out the swapped result 
+        System.out.println("Decrypted integer is " + tempResult2.charAt(2) + tempResult2.charAt(3) + tempResult2.charAt(0) + tempResult2.charAt(1));
+    }
+}
